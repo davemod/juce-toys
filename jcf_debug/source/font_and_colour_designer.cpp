@@ -146,13 +146,14 @@ public:
 
     void buttonClicked (Button*) override
     {
-        bool success = fileChooser.browseForDirectory();
-
-        if (success)
-        {
-            directoryContentsList.setDirectory (fileChooser.getResult(), true, true);
-            tree.refresh();
-        }
+        jassertfalse;
+//        bool success = fileChooser.browseForDirectory();
+//
+//        if (success)
+//        {
+//            directoryContentsList.setDirectory (fileChooser.getResult(), true, true);
+//            tree.refresh();
+//        }
     }
 
 
