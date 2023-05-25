@@ -137,6 +137,7 @@ public:
         {
             highlight = std::make_unique<Highlighter>();
             highlight->setBounds (getLocationOf (component));
+            highlight->setAlwaysOnTop(true);
             root->addAndMakeVisible (highlight.get());
         }
 
