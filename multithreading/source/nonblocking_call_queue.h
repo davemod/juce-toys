@@ -131,8 +131,12 @@ public:
     {
         bool didSomething = false;
 
+        auto thread = Thread::getCurrentThread ();
         while (fifo.getNumReady() > 0)
         {
+            if (thread && thread->threadShouldExit ())
+                return didSomething;
+            
             int idx1, idx2, sz1, sz2;
             fifo.prepareToRead (1, idx1, sz1, idx2, sz2);
             didSomething = true;
